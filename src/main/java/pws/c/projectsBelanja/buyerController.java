@@ -20,7 +20,7 @@ public class buyerController {
     
     computeMarket data = new computeMarket();
     
-    @RequestMapping("\buyer")
+    @RequestMapping("/buyer")
     public String buyer(@RequestParam(value="nama") String nama,
                         @RequestParam(value="harga") String harga,
                         @RequestParam(value="item") String item,
