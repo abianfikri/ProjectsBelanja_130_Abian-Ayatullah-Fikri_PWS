@@ -6,46 +6,93 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Big Market</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            
+            header{
+                margin-bottom: 20px;
+                padding: 20px;
+            }
+            
+            header p{
+                margin-top: 10px;
+            }
+            
+            table{
+                width: 40%;
+            }
+            
+            table input{
+                width: 99%;
+            }
+            
+            .oke {
+                margin-top: 30px;
+                width: 40%;
+                height: 30px;
+            }
+            
+            form{
+                margin-top: 30px;
+            }
+        </style>
     </head>
-    <body>
-        <h1 align="center">Welcome To Our Market</h1>
-        <hr/>
-        <br>
+    <body style="background: #A3C7D6">
+    <center>
+        <header style="background: #5DA7DB">
+            <h1 style="color: #FFB9B9; text-transform: uppercase">Department Store Fashion JAVA</h1>
+            <p>Welcome To DFJ Store </p>
+            <p>Find your favorite dress style in our shopping center</p>
+        </header>
+        
         
         <form action="/buyer">
             <table border="1">
                 <tr>
-                    <td>Nama Barang</td>
-                    <td><input type="text" name="nama" placeholder="Masukkan Nama Barang" autofocus autocomplete="off"/></td>
+                    <td>Name Item</td>
+                    <td><input type="text" name="nama" placeholder="Enter Name Item" autofocus autocomplete="off"/></td>
                 </tr>
                 
                 <tr>
-                    <td>Harga Barang</td>
-                    <td><input type="text" name="harga" placeholder="Masukkan Harga Barang"/></td>
+                    <td>Price</td>
+                    <td><input type="number" name="harga" placeholder="Enter the Price"/></td>
                 </tr>
                 
                 <tr>
-                    <td>Jumlah Item</td>
-                    <td><input type="text" name="item" placeholder="Masukkan Jumlah Item"/></td>
+                    <td>QTY</td>
+                    <td><input type="number" name="item" placeholder="Enter Qty" autocomplete="off"/></td>
+                </tr>
+                
+                <tr>
+                    <td>Bayar</td>
+                    <td><input type="number" name="bayar" placeholder="Enter Money" autocomplete="off"/></td>
                 </tr>
             </table>
             
             <p>
-                <input type="submit" value="Submit"/>
+                <input class="oke" type="submit" value="Submit"/>
             </p>
         </form>
+    </center>
+        
         
         <!-- CSS Footer -->
         <style>
             footer{
-                border: 2px solid aqua;
                 margin-top:  50px;
                 text-align: center;
             }
         </style>
-        <footer>Abian Ayatullah Fikri</footer>
+        <footer>
+            <i>Author by</i>
+            <p>Abian Ayatullah Fikri 20200140130</p>
+        </footer>
     </body>
 </html>

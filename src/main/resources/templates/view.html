@@ -6,21 +6,27 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>View Barang</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <div>TODO write content</div>
+    <body style="background: #A3C7D6">
+        <h1 align="center">Purchase orders</h1>
         
-        <table>
+        <style>
+            b{
+                text-transform: uppercase;
+            }
+        </style>
+        
+        <center>
+            <table border="1">
             <tr>
                 <td>Nama Barang</td>
                 <td>Harga Barang</td>
                 <td>Item Barang</td>
                 <td>Total Harga</td>
                 <td>Diskon</td>
-                <td>Total Akhir</td>
             </tr>
             
             <tr>
@@ -28,9 +34,37 @@ and open the template in the editor.
                 <td><b th:text="${price}"></b></td>
                 <td><b th:text="${list}"></b></td>
                 <td><b th:text="${total}"></b></td>
-                <td><b th:text="${ketDiskon}"></b></td>
-                <td><b th:text="${diskon}"></b></td>
+                <td><b th:text="${laba}"></b></td>
             </tr>
+            
+            <tr>
+                <td  colspan="3" style="text-align: right; padding-right:  100px">Total Akhir</td>
+                <td colspan="2"><b th:text="${diskon}"></b></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right; padding-right:  134px">Bayar</td>
+                <td colspan="2"><b th:text="${money}"></b></td>
+            </tr>
+            
+            <tr>
+                <td colspan="3" style="text-align: right; padding-right:  100px">Kembalian</td>
+                <td colspan="2"><b th:text="${kembalian}"></b></td>
+            </tr>
+                
         </table>
+        </center>
+    
+        <!-- CSS Footer -->
+        <style>
+            footer{
+                margin-top:  50px;
+                text-align: center;
+            }
+        </style>
+        <footer>
+            <i>Author by</i>
+            <p>Abian Ayatullah Fikri 20200140130</p>
+        </footer>
+        
     </body>
 </html>

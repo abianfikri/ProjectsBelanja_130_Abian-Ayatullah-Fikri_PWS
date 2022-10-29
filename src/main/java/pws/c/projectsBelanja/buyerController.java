@@ -5,6 +5,7 @@
  */
 package pws.c.projectsBelanja;
 
+import proses.computeMarket;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,24 +25,29 @@ public class buyerController {
     public String buyer(@RequestParam(value="nama") String nama,
                         @RequestParam(value="harga") String harga,
                         @RequestParam(value="item") String item,
+                        @RequestParam(value="bayar") String bayar,
                         Model model){
         
-        double price, list, totBarang, diskon, ketDiskon;
+        int price, list, totBarang, diskon, laba, money;
         
-        price = Double.parseDouble(harga);
-        list = Double.parseDouble(item);
+        price = Integer.parseInt(harga);
+        list = Integer.parseInt(item);
+        money = Integer.parseInt(bayar);
         
         // Proses Perhitungan
         totBarang = data.getTotal(price, list);
         diskon = data.getDiskon(price, list);
-        ketDiskon = data.ketDiskon(price, list);
+        laba = data.ketDiskon(price, list);
+        String Kembalian = data.getKembalian(money, diskon);
         
         model.addAttribute("name", nama);
         model.addAttribute("price","Rp " +price);
         model.addAttribute("list", list);
         model.addAttribute("total", "Rp " + totBarang); // total sebelum diskon
         model.addAttribute("diskon", "Rp " + diskon ); // total akhir
-        model.addAttribute("ketDiskon ", ketDiskon + " %");
+        model.addAttribute("kembalian", Kembalian); // kembalian
+        model.addAttribute("money","Rp " +  money); // Bayar
+        model.addAttribute("laba", laba + " %");
         
         
         return "view";
